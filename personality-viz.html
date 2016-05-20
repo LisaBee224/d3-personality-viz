@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- <link rel="stylesheet" href="normalize.css"> -->
+  <link rel="stylesheet" href="application.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="application.js"></script>
+  <script src="data_set.js"></script>
+    <script src="d3.js"></script>
+
+  <title>Personality Types Visualization</title>
+</head>
+<body>
+  <div class="test active">
+    <h1>pick your type</h1>
+<div class= "question-container">
+    <div class = "question">
+        <a class="ei" id="E" href="/">E</a>
+        <p class="text hidden" id="PE">
+          I focus on the world that is external to me.<br>
+          I get more energy from being around people.<br>
+          I'm happier when I'm active.
+        </p>
+    </div>
+    <div class="question">
+        <a class="ei" id="I" href="/">I</a>
+        <p class="text hidden" id="PI">
+          I focus on my inner world.<br>
+          I get more energy from reflection or being alone.<br>
+          I'm happier when I'm with a small group, one-on-one, or alone.
+        </p>
+    </div>
+
+    <div class = "question">
+        <a class="sn" id="S" href="/">S</a>
+        <p class="text hidden" id="PS">
+          I focus on the things I can see and interact with.<br>
+          I can easily manipulate and interact with the physical world.<br>
+          My attention is squarely in the current sphere.
+        </p>
+    </div>
+    <div class="question">
+        <a class="sn" id="N" href="/">N</a>
+        <p class="text hidden" id="PN">
+          I focus on the things that are abstract or conceptual.<br>
+          I can easily see conceptual patterns and can predict changes.<br>
+          My attention is generally in the past or future sphere.
+        </p>
+    </div>
+
+    <div class="question">
+        <a class="tf" id="T" href="/">T</a>
+        <p class="text hidden" id="PT">
+          I most value objective reasoning.<br>
+          I can clearly explain the logical underpinnings of a given structure.
+        </p>
+      </div>
+      <div class="question">
+        <a class="tf" id="F" href="/">F</a>
+        <p class="text hidden" id="PF">
+          I most value interpersonal harmony.<br>
+          I can clearly explain the reasons and values underpinning a given social scenario.
+        </p>
+    </div>
+
+
+    <div class = "question">
+        <a class="jp" id="P" href="/">P</a>
+        <p class="text hidden" id="PP">
+          Spontaneity. Flexibility. Adaptability.<br>
+          I prefer keeping my options open.<br>
+          I prefer responding naturally to the flow of events.
+        </p>
+      </div>
+      <div class="question">
+
+        <a class="jp" id="J" href="/">J</a>
+        <p class="text hidden" id="PJ">
+          Structure. Organization. Preparation. Closure.<br>
+          I prefer being in control.<br>
+          I prefer being productive, timely, and focused.
+        </p>
+  </div>
+</div>
+
+
+  <div id="viz-container"></div>
+  <!-- <div class="data hidden">
+    <span id="ISTJ">
+    <svg width = "232" height="232">
+        <circle cx = "116" cy = "116" r ="116" fill="#6DFFC7">
+        <text x ="20" y="20"
+          font-family="sans-serif"
+          font-size: ".3em"
+          text-anchor="middle"
+          fill="black">ISTJ</text>
+        </svg>
+      </span>
+
+    <span id="ISFJ">
+     <svg width = "276" height="276">
+        <circle cx = "138" cy = "138" r ="138" fill="#6DFFC7">
+        <text x ="20" y="20"
+          font-family="sans-serif"
+          font-size: ".3em"
+          text-anchor="middle"
+          fill="black">ISFJ</text>
+          </svg>
+      </span>
+
+    <span id="INFJ">
+         <svg width = "30" height="30">
+          <circle cx = "15" cy = "15" r ="15" fill="#6DFFC7">
+          <text x ="20" y="20"
+            font-family="sans-serif"
+            font-size: ".2em"
+            text-anchor="middle"
+            fill="black">INFJ</text>
+            </svg>
+      </span>
+
+    <span id="INTJ">
+         <svg width = "42" height="42">
+          <circle cx = "21" cy = "21" r ="21" fill="#6DFFC7">
+          <text x ="20" y="20"
+            font-family="sans-serif"
+            font-size: ".2em"
+            text-anchor="middle"
+            fill="black">INTJ</text>
+            </svg>
+      </span>
+
+    <span id="ISTP">
+     <svg width = "108" height="108">
+        <circle cx = "54" cy = "54" r ="54" fill="#6DFFC7">
+        <text x ="20" y="20"
+          font-family="sans-serif"
+          font-size: ".3em"
+          text-anchor="middle"
+          fill="black">ISTP</text>
+          </svg>
+    </span>
+
+    <span id="ISFP">
+    <svg width = "166" height="166">
+        <circle cx = "88" cy = "88" r ="88" fill="#6DFFC7">
+        <text x ="20" y="20"
+          font-family="sans-serif"
+          font-size: ".3em"
+          text-anchor="middle"
+          fill="black">ISFP</text>
+          </svg>
+    </span>
+
+    <span id="INFP">
+     <svg width = "88" height="88">
+        <circle cx = "44" cy = "44" r ="44" fill="#6DFFC7">
+        <text x ="20" y="20"
+          font-family="sans-serif"
+          font-size: ".3em"
+          text-anchor="middle"
+          fill="black">INFP</text>
+          </svg>
+    </span>
+
+    <span id="INTP">
+         <svg width = "66" height="66">
+          <circle cx = "33" cy = "33" r ="33" fill="#6DFFC7">
+          <text x ="20" y="20"
+            font-family="sans-serif"
+            font-size: ".3em"
+            text-anchor="middle"
+            fill="black">INTP</text>
+            </svg>
+    </span>
+    <span id="ESTP">
+      <svg width = "86" height="86">
+        <circle cx = "43" cy = "43" r ="43" fill="#6DFFC7">
+        <text x ="20" y="20"
+          font-family="sans-serif"
+          font-size: ".3em"
+          text-anchor="middle"
+          fill="black">ESTP</text>
+          </svg>
+    </span>
+    <span id="ESFP">
+         <svg width = "170" height="170">
+          <circle cx = "85" cy = "85" r ="85" fill="#6DFFC7">
+          <text x ="20" y="20"
+            font-family="sans-serif"
+            font-size: ".3em"
+            text-anchor="middle"
+            fill="black">ESFP</text>
+            </svg>
+      </span>
+
+    <span id="ENFP">
+         <svg width = "162" height="162">
+          <circle cx = "81" cy = "81" r ="81" fill="#6DFFC7">
+          <text x ="20" y="20"
+            font-family="sans-serif"
+            font-size: ".3em"
+            text-anchor="middle"
+            fill="black">ENFP</text>
+            </svg>
+    </span>
+    <span id="ENTP">
+         <svg width = "64" height="64">
+          <circle cx = "32" cy = "32" r ="32" fill="#6DFFC7">
+          <text x ="20" y="20"
+            font-family="sans-serif"
+            font-size: ".3em"
+            text-anchor="middle"
+            fill="black">ENTP</text>
+            </svg>
+    </span>
+    <span id="ESTJ">
+         <svg width = "174" height="174">
+          <circle cx = "87" cy = "87" r ="87" fill="#6DFFC7">
+          <text x ="20" y="20"
+            font-family="sans-serif"
+            font-size: ".3em"
+            text-anchor="middle"
+            fill="black">ESTJ</text>
+            </svg>
+    </span>
+    <span id="ESFJ">
+         <svg width = "246" height="246">
+          <circle cx = "123" cy = "123" r ="123" fill="#6DFFC7">
+          <text x ="20" y="20"
+            font-family="sans-serif"
+            font-size: ".3em"
+            text-anchor="middle"
+            fill="black">ESFJ</text>
+            </svg>
+        </span>
+      <span id="ENFJ">
+         <svg width = "50" height="50">
+          <circle cx = "25" cy = "25" r ="25" fill="#6DFFC7">
+          <text x ="20" y="20"
+            font-family="sans-serif"
+            font-size: ".3em"
+            text-anchor="middle"
+            fill="black">ENFJ</text>
+            </svg>
+      </span>
+
+    <span id="ENTJ">
+         <svg width = "36" height="36">
+        <circle cx = "18" cy = "18" r ="18" fill="#6DFFC7">
+        <text x ="20" y="20"
+          font-family="sans-serif"
+          font-size: ".3em"
+          text-anchor="middle"
+          fill="black">ENTJ</text>
+          </svg>
+          </span>
+  </div> -->
+
+</body>
+</html>

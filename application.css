@@ -1,0 +1,74 @@
+/*subl body {
+  margin: 2%;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.question {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: 70%;
+}
+
+.question span {
+  display: flex;
+  width: 600px;
+  height: 200px;
+  border: 1px solid #58CCA0;
+  text-align: right;
+  font-size: 4em;
+  margin: 1%;
+  background-color: #58CCA0;
+}
+
+.question span a {
+}
+
+.question span p {
+  font-size: .3em;
+  width: 400px;
+}
+
+.hidden {
+  font-size: .3em;
+  color: #fff;
+  display: none;
+}
+
+.data {
+  width: 70%;
+  margin: 10% auto;
+}*/
+
+/*.data span {
+  display: inline-block;
+  text-align: center;
+}
+*/
+
+.link {
+  stroke: #333;
+  stroke-width:2px;
+
+}
+
+/* D3 */
+.node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+circle{
+  stroke:#fff;
+  stroke-width:2.5px;
+}
+
+.link {
+  stroke: #999;
+  stroke-opacity: .6;
+}
+
