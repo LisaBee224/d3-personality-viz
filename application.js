@@ -10,10 +10,13 @@ $(document).ready(function() {
       // console.log('in here')
       var type = collection.generateType();
       $(".question").hide();
+      $(".question-odd").hide();
 
       $("#viz-container").show();
       renderViz();
-      $("#" + type).find("path, polygon,circle").attr("fill", "red");
+      d3.select("#" + type).style("fill", "#EF476F");
+      d3.select("#" + type).attr("name").append("there you are!");
+
       // e.stopPropagation();
     }
   });
@@ -47,6 +50,12 @@ $(document).ready(function() {
   })
   $("#T").mouseout(function(){
     $("#PT").fadeOut(500);
+  });
+    $("#F").mouseover(function(){
+    $("#PF").fadeIn(500);
+  })
+  $("#F").mouseout(function(){
+    $("#PF").fadeOut(500);
   });
   $("#P").mouseover(function(){
     $("#PP").fadeIn(500);
