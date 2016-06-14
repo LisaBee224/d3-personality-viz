@@ -58,15 +58,13 @@ var color = d3.scale.category20();
 
 var force = d3.layout.force()
     .charge(-120)
-    .linkDistance(160)
+    .linkDistance(200)
     .size([width, height]);
 
 var svg = d3.select("#viz-container").append("svg")
     .attr("width", width)
     .attr("height", height);
 
-// d3.json("miserables.json", function(error, graph) {
-  // if (error) throw error;
 
   force
       .nodes(graph.nodes)
@@ -85,12 +83,13 @@ var svg = d3.select("#viz-container").append("svg")
 
   var circle = node.append("circle")
       .attr("r", function(d){
-        return d.size * 3;
+        return d.size * 4.5;
       })
-      .style("fill", function(d) { return '#339966'; })
+      .style("fill", function(d) { return '#06D6A0'; })
+      .attr("id", function(d){return d.name})
       .call(force.drag);
 
-  var textEl =node.append("text")
+  var textEl=node.append("text")
       .text(function(d) { return d.name; });
 
   force.on("tick", function() {

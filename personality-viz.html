@@ -3,7 +3,7 @@
 <head>
   <!-- <link rel="stylesheet" href="normalize.css"> -->
   <link rel="stylesheet" href="application.css">
-
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
   <script src="application.js"></script>
@@ -14,7 +14,11 @@
 </head>
 <body>
   <div class="test active">
-    <h1>pick your type</h1>
+    <div class="header">
+    <h1>Myers-Briggs Personality Visualization</h1>
+    <p>In each row, click on the letter that best describes you. (E or I, S or N, and so on). After the page jump, see where your personality stands!</p>
+    <p><i>made with D3</i></p>
+    </div>
 <div class= "question-container">
     <div class = "question">
         <a class="ei" id="E" href="/">E</a>
@@ -24,7 +28,7 @@
           I'm happier when I'm active.
         </p>
     </div>
-    <div class="question">
+    <div class="question-odd">
         <a class="ei" id="I" href="/">I</a>
         <p class="text hidden" id="PI">
           I focus on my inner world.<br>
@@ -41,7 +45,7 @@
           My attention is squarely in the current sphere.
         </p>
     </div>
-    <div class="question">
+    <div class="question-odd">
         <a class="sn" id="N" href="/">N</a>
         <p class="text hidden" id="PN">
           I focus on the things that are abstract or conceptual.<br>
@@ -57,7 +61,7 @@
           I can clearly explain the logical underpinnings of a given structure.
         </p>
       </div>
-      <div class="question">
+      <div class="question-odd">
         <a class="tf" id="F" href="/">F</a>
         <p class="text hidden" id="PF">
           I most value interpersonal harmony.<br>
@@ -74,7 +78,7 @@
           I prefer responding naturally to the flow of events.
         </p>
       </div>
-      <div class="question">
+      <div class="question-odd">
 
         <a class="jp" id="J" href="/">J</a>
         <p class="text hidden" id="PJ">
